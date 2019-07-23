@@ -1,0 +1,11 @@
+{% extends 'songbook/base.html' %}
+
+{% block content %}
+    {% for song in songs %}
+        <div class="song">
+            <p class="date">created: {{ song.created_date|date:'d-m-Y' }}</p>
+            <h1><a href="{% url 'song_detail' pk=song.pk %}">{{ song.title }}</a></h1>
+            <p>{{ song.text|truncatechars:200 }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
