@@ -8,4 +8,4 @@ def song_list(request):
 
 def song_detail(request, pk):
     song = get_object_or_404(Song, pk=pk)
-    return render(request, 'blog/song_detail.html', {'song': song})
+    return render(request, 'songbook/song_detail.html', {'song': song})
